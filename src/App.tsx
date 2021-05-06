@@ -1,15 +1,19 @@
 import React from "react";
 import Map from "./components/Map";
 import Settings from "./components/Settings";
-// Data
-import europe from "./europe.geo.json";
+import { FeatureCollection } from "geojson";
+
 // Styles
 import "./App.css";
 
-function App() {
+import europeImport from "./europe.json";
+const europeFile = JSON.stringify(europeImport);
+const europe: FeatureCollection = JSON.parse(europeFile);
+
+function App(): JSX.Element {
   return (
     <div className="App">
-      <Map />
+      <Map data={europe} />
       <Settings data={europe} />
     </div>
   );
