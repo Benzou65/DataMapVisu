@@ -13,7 +13,9 @@ export default function Settings(props: {
     <div className={styles.settings}>
       <ul>
         {data.features.map((country: Feature) => (
-          <li key={country.properties?.iso_a3}>{country.properties?.name}</li>
+          <li key={country.properties?.iso_a3 + "-" + country.properties?.name}>
+            {country.properties?.name}
+          </li>
         ))}
       </ul>
     </div>
