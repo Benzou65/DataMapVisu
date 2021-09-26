@@ -7,9 +7,9 @@ import { parse, ParseResult } from "papaparse";
 // Styles
 import "./App.css";
 
-import europeImport from "./europe.json";
-const europeFile = JSON.stringify(europeImport);
-const europe: FeatureCollection = JSON.parse(europeFile);
+import worldImport from "./world.json";
+const worldFile = JSON.stringify(worldImport);
+const world: FeatureCollection = JSON.parse(worldFile);
 
 export interface TFrData {
   admin_name: string;
@@ -44,8 +44,8 @@ function App(): JSX.Element {
 
   return (
     <div className="App">
-      <Map data={europe} city={city} />
-      {/* <Settings data={europe} /> */}
+      <Map data={world} city={city} />
+      {/* <Settings data={world} /> */}
       <div className="csvInput">
         <input
           type="file"
