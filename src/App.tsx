@@ -1,6 +1,6 @@
 import React, { ChangeEvent, useState } from "react";
 import Map from "./components/Map";
-import Settings from "./components/Settings";
+// import Settings from "./components/Settings";
 import { FeatureCollection } from "geojson";
 import { parse, ParseResult } from "papaparse";
 

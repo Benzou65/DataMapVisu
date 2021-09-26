@@ -1,6 +1,6 @@
 import { FeatureCollection, Feature } from "geojson";
 import React from "react";
-import { MapContainer, TileLayer, Marker, Popup, GeoJSON } from "react-leaflet";
+import { MapContainer, Marker, Popup, GeoJSON } from "react-leaflet";
 import L from "leaflet";
 import logo from "./assets/marker-declique.png";
 // GeoJSON https://geojson-maps.ash.ms/
