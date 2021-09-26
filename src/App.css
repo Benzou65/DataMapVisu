@@ -1,3 +1,8 @@
 .App {
   display: flex;
 }
+.csvInput {
+  position: absolute;
+  bottom: 2em;
+  right: 1em;
+}

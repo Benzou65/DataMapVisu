@@ -3,7 +3,15 @@
 This is a personal project to visualize marker on a map.
 The final idea is to let the user import its data (with csv file for example) and customize which countries he wants to display and their colors as well as the logo displayed as a marker.
 
+---
+
+📣 You can now display city on the map by droping a csv file containing this header : city,lat,lng
+
+---
+
 ## Available Scripts
+
+⚠️⚠️ Only use NPM ⚠️⚠️
 
 In the project directory, you can run:
 

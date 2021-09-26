@@ -4,33 +4,29 @@ import { MapContainer, TileLayer, Marker, Popup, GeoJSON } from "react-leaflet";
 import L from "leaflet";
 import logo from "./assets/marker-declique.png";
 // GeoJSON https://geojson-maps.ash.ms/
-
+// Types
+import { TFrData } from "../App";
 // Styles
 import styles from "./Map.module.scss";
-
-function getRandomColor() {
-  const letters = "0123456789ABCDEF";
-  let color = "#";
-  for (let i = 0; i < 6; i++) {
-    color += letters[Math.floor(Math.random() * 16)];
-  }
-  return color;
-}
 
 const myIcon = L.icon({
   iconUrl: logo,
   iconRetinaUrl: logo,
   iconSize: [20, 20],
   iconAnchor: [0, 0],
-  popupAnchor: [0, 0],
+  popupAnchor: [-10, -20],
   shadowUrl: logo,
   shadowRetinaUrl: logo,
   shadowSize: [0, 0],
   shadowAnchor: [0, 0],
 });
 
-export default function Map(props: { data: FeatureCollection }): JSX.Element {
-  const { data } = props;
+export default function Map(props: {
+  data: FeatureCollection;
+  city?: TFrData[];
+}): JSX.Element {
+  const { data, city } = props;
+
   return (
     <MapContainer
       center={[43.6, 1.45]}
@@ -55,11 +51,16 @@ export default function Map(props: { data: FeatureCollection }): JSX.Element {
         />
       ))}
 
-      <Marker position={[43.6, 1.45]} icon={myIcon}>
-        <Popup>
-          TOULOUSE <br /> Bien ou bien ?!
-        </Popup>
-      </Marker>
+      {city &&
+        city.map((city: TFrData) => (
+          <Marker
+            key={city.city}
+            position={[parseFloat(city.lat), parseFloat(city.lng)]}
+            icon={myIcon}
+          >
+            <Popup>{city.city}</Popup>
+          </Marker>
+        ))}
     </MapContainer>
   );
 }
