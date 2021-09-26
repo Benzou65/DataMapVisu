@@ -9,6 +9,10 @@ The final idea is to let the user import its data (with csv file for example) an
 
 ---
 
+You can test this app here : https://data-map-visu.vercel.app/
+
+---
+
 ## Available Scripts
 
 ⚠️⚠️ Only use NPM ⚠️⚠️
