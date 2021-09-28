@@ -53,11 +53,7 @@ export default function Map(props: {
 
       {city &&
         city.map((city: TFrData) => (
-          <Marker
-            key={city.city}
-            position={[parseFloat(city.lat), parseFloat(city.lng)]}
-            icon={myIcon}
-          >
+          <Marker key={city.city} position={[city.lat, city.lng]} icon={myIcon}>
             <Popup>{city.city}</Popup>
           </Marker>
         ))}

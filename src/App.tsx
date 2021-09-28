@@ -17,8 +17,8 @@ export interface TFrData {
   city: string;
   country: string;
   iso2: string;
-  lat: string;
-  lng: string;
+  lat: number;
+  lng: number;
   population: string;
   population_proper: string;
   address: string;
@@ -32,7 +32,9 @@ function App(): JSX.Element {
       header: true,
       complete: (results: ParseResult<TFrData>) => {
         const city: TFrData[] = results.data;
-        for (let i = 0; i < 30; i++) {
+        console.log(city.length);
+        for (let i = 0; i < city.length - 1; i++) {
+          // -1 to remove the last empty line (papa parse bug when removing header)
           cityData.push(city[i]);
         }
         setcity(cityData);
