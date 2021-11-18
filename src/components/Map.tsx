@@ -9,12 +9,15 @@ import { TFrData } from "../App";
 // Styles
 import styles from "./Map.module.scss";
 
+const iconSizeW = 20;
+const iconSizeH = 20;
+
 const myIcon = L.icon({
   iconUrl: logo,
   iconRetinaUrl: logo,
-  iconSize: [20, 20],
+  iconSize: [iconSizeW, iconSizeH],
   iconAnchor: [0, 0],
-  popupAnchor: [-10, -20],
+  popupAnchor: [iconSizeH / 2, 0],
   shadowUrl: logo,
   shadowRetinaUrl: logo,
   shadowSize: [0, 0],
