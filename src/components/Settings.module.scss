@@ -1,4 +1,13 @@
 .settings {
-  width: 50%;
+  width: 200px;
   height: 100vh;
+  z-index: 400;
+  position: fixed;
+  right: 0px;
+  top: 0px;
+  overflow-y: scroll;
+  background-color: #303030;
+  border-left: 2px solid #ffa926;
+  color: white;
+  transition: right 1s;
 }

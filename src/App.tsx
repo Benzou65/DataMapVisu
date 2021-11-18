@@ -1,6 +1,6 @@
 import React, { ChangeEvent, useState } from "react";
 import Map from "./components/Map";
-// import Settings from "./components/Settings";
+import Settings from "./components/Settings";
 import { FeatureCollection } from "geojson";
 import { parse, ParseResult } from "papaparse";
 
@@ -47,7 +47,7 @@ function App(): JSX.Element {
   return (
     <div className="App">
       <Map data={world} city={city} />
-      {/* <Settings data={world} /> */}
+      <Settings data={world} />
       <div className="csvInput">
         <input
           type="file"
